@@ -1,0 +1,62 @@
+<div class="container">
+    <form
+    [formGroup]="registerForm"
+    (ngSubmit)="submit()"
+    >
+        <mat-card-content>
+    <p>
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input formControlName="nombres" matInput />
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido</mat-label>
+    <input formControlName="apellidos" matInput />
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Número de Identificación</mat-label>
+    <input formControlName="documento" matInput />
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input placeholder="pat@example.com" formControlName="email" matInput />
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Tipo de identificación</mat-label>
+    <input formControlName="tipoDocumento" matInput />
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Usuario</mat-label>
+    <input formControlName="username" matInput />
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Contraseña</mat-label>
+    <input  formControlName="clave" matInput [type]="hide ? 'password' : 'text'" />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+  </mat-form-field>
+</p>
+</mat-card-content>
+<button type="submit" mat-stroked-button color="accent" class="btn-block">Registrar persona</button>
+</form>
+<a [routerLink]="'login'">Inicia sesión</a>
+</div>

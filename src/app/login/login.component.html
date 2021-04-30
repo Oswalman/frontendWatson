@@ -1,0 +1,27 @@
+<div>
+  <form   [formGroup]="loginForm"
+  (ngSubmit)="submit()">
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Usuario</mat-label>
+      <input formControlName="username" matInput />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Contraseña</mat-label>
+      <input  formControlName="clave" matInput [type]="hide ? 'password' : 'text'" />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <button type="submit" mat-stroked-button color="accent" class="btn-block">Iniciar Sesión</button>
+  </form>
+  <a [routerLink]="'/'">Registrate</a>
+</div>
